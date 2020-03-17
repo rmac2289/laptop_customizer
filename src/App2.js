@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+
+import slugify from 'slugify';
+
 import './App.css';
 import Summary from './Summary';
 import CartTotal from './CartTotal';
-import FeatureForm from './FeaturesForm';
+import FeaturesForm from './FeaturesForm';
 
 
-class App extends Component {
+class App2 extends Component {
     state = {
         selected: {
           Processor: {
@@ -26,13 +29,6 @@ class App extends Component {
           }
         }
       };
-      updateFeature = (feature, newValue) => {
-        const selected = Object.assign({}, this.state.selected)
-        selected[feature] = newValue
-        this.setState({
-          selected
-        })
-      }
       render() {
 		return (
 			<div className="App">
@@ -40,7 +36,7 @@ class App extends Component {
 					<h1>ELF Computing | Laptops</h1>
 				</header>
 				<main>
-					<FeatureForm
+					<FeaturesForm
 						features={this.props.features}
 						selected={this.state.selected}
 						onUpdateFeature={this.updateFeature}
