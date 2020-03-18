@@ -1,6 +1,7 @@
 import React from 'react'
 import FeatureItem from './FeatureItem'
 
+
 function FeaturesForm({ features, onUpdateFeature, selected }) {
 	const featureItems = Object.keys(features).map((feature, idx) => {
 		const featureHash = feature + '-' + idx

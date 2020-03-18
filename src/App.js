@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Summary from './Summary';
-import CartTotal from './CartTotal';
-import FeatureForm from './FeaturesForm';
+import FeaturesForm from './FeaturesForm';
+import FEATURES from './FEATURES';
+import MainSummary from './MainSummary';
 
 
 class App extends Component {
@@ -40,16 +40,12 @@ class App extends Component {
 					<h1>ELF Computing | Laptops</h1>
 				</header>
 				<main>
-					<FeatureForm
-						features={this.props.features}
+					<FeaturesForm
+						features={FEATURES}
 						selected={this.state.selected}
 						onUpdateFeature={this.updateFeature}
 					/>
-					<section className="main__summary">
-						<h2>Your cart</h2>
-						<Summary selected={this.state.selected} />
-						<CartTotal selected={this.state.selected} />
-					</section>
+					<MainSummary selected={this.state.selected}/>
 				</main>
 			</div>
 		)
